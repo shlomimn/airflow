@@ -8,6 +8,7 @@ kubectl apply -f airflow_deployment.yml
 kubectl apply -f airflow_service.yml
 ```
 
+<br/>
 ## additional commands for LOAD_EX=y
 ### verify env LOAD_EX is not set in container
 ```
