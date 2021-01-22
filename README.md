@@ -10,18 +10,23 @@ kubectl apply -f airflow_service.yml
 
 ## additional commands for LOAD_EX=y
 ### verify env LOAD_EX is not set in container
+```
 kubectl exec --stdin --tty airflow-5846f74896-vh8p4 -- /bin/bash
 env | grep LOAD_EX
+```
 
 ### setting env parameter in deploy
+```
 kubectl set env deployment airflow LOAD_EX=y
 kubectl get pods
+```
 
 ### verify env LOAD_EX is set in container
+```
 kubectl exec --stdin --tty airflow-f89c9c98c-bcppj -- /bin/bash
 airflow@airflow-f89c9c98c-bcppj:~$ env | grep LOAD_EX
 LOAD_EX=y
-
+```
 
 ## finding minikube's IP
 minikube ip<br/> 
